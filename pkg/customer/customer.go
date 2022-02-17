@@ -2,22 +2,21 @@ package customer
 
 import (
 	"database/sql"
-	"strings"
 )
 
 type Customer struct {
 	DB *sql.DB
 }
 
-// func (customer *Customer) DeleteItem(email string) *CustomerItem {
-// 	allItems := customer.GetAll()
-
-// }
+func (customer *Customer) DeleteItem(email string) {
+	statement, _ := customer.DB.Prepare("delete from customer where email = ?")
+	statement.Exec(email)
+}
 
 func (customer *Customer) GetItem(email string) *CustomerItem {
 	allItems := customer.GetAll()
 	for _, item := range allItems {
-		if strings.Compare(item.Email, email) == 0 {
+		if item.Email == email {
 			return &item
 		}
 	}

@@ -14,4 +14,6 @@ func main() {
 	fmt.Println(customerInstance.GetAll())
 	findedCustomer := customerInstance.GetItem("amirmoajrad@gmail.com")
 	fmt.Println(findedCustomer)
+	customerInstance.DeleteItem("amirmoajrad@gmail.com")
+	fmt.Println(customerInstance.GetAll())
 }
