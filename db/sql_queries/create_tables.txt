@@ -12,10 +12,10 @@ CREATE TABLE "book" (
 -- order Table
 CREATE TABLE "order" (
     "id" INTEGER NOT NULL UNIQUE,
-    "book_id"	INTEGER NOT NULL,
+    "book_id"	    INTEGER NOT NULL,
     "customer_id"	INTEGER NOT NULL,
-    "date" TEXT NOT NULL,
-    "price" TEXT NOT NULL,
+    "price"         INTEGER NOT NULL,
+    "order_date"    TEXT NOT NULL,
     PRIMARY KEY("id" AUTOINCREMENT)
 );
 
